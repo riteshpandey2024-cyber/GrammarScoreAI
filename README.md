@@ -1,12 +1,6 @@
-# GrammarScoreAI 🎯
+# GrammarScoreAI 
 
-<div align="center">
 
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org/)
-[![Transformers](https://img.shields.io/badge/🤗-Transformers-yellow)](https://huggingface.co/)
-[![LightGBM](https://img.shields.io/badge/LightGBM-4.0+-brightgreen.svg)](https://lightgbm.readthedocs.io/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 **State-of-the-art Multimodal Machine Learning for Spoken Grammar Assessment**
 
@@ -21,11 +15,11 @@
 
 ---
 
-## 🎯 Overview
+##  Overview
 
 **GrammarScoreAI** is an advanced end-to-end machine learning system that automatically evaluates spoken English grammar quality from raw audio recordings. This project implements a novel **multimodal stacking architecture** that combines deep linguistic understanding with acoustic prosody modeling to achieve state-of-the-art performance.
 
-### 🎭 The Challenge
+###  The Challenge
 
 Traditional grammar scoring systems rely solely on text transcripts, but modern ASR systems introduce critical problems:
 
@@ -36,7 +30,7 @@ Traditional grammar scoring systems rely solely on text transcripts, but modern 
 | **Normalization** | Artificially reconstructs sentences | Raw speech preservation |
 | **Lost acoustic cues** | Ignores pauses, hesitations, tempo | Multimodal acoustic analysis |
 
-### 💡 Our Approach
+###  Our Approach
 
 We score grammar on a **continuous MOS (Mean Opinion Score) Likert scale from 0.0 to 5.0**:
 - **0.0** → Severe grammatical errors with poor fluency
@@ -47,7 +41,7 @@ We score grammar on a **continuous MOS (Mean Opinion Score) Likert scale from 0.
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
 <table>
 <tr>
@@ -61,7 +55,7 @@ We score grammar on a **continuous MOS (Mean Opinion Score) Likert scale from 0.
 </td>
 <td width="50%">
 
-### 🧠 Deep Learning
+###  Deep Learning
 - **Transformer-based NLU**: Fine-tuned DeBERTa-v3-base for syntactic analysis
 - **Differential Learning Rates**: Optimized training strategy for transfer learning
 - **5-Fold Cross-Validation**: Robust out-of-fold prediction generation
@@ -90,7 +84,7 @@ We score grammar on a **continuous MOS (Mean Opinion Score) Likert scale from 0.
 
 ---
 
-## 🏆 Performance Metrics
+##  Performance Metrics
 
 ### Model Progression & Benchmarks
 
@@ -136,7 +130,7 @@ We score grammar on a **continuous MOS (Mean Opinion Score) Likert scale from 0.
 </tbody>
 </table>
 
-### 📈 Final Evaluation Results
+###  Final Evaluation Results
 
 | Metric | Training Set | Test Set | Interpretation |
 |:-------|:------------:|:--------:|:---------------|
@@ -148,7 +142,7 @@ We score grammar on a **continuous MOS (Mean Opinion Score) Likert scale from 0.
 
 ---
 
-## 🏗️ System Architecture
+##  System Architecture
 
 Our pipeline consists of **four integrated stages** working in concert:
 
@@ -238,7 +232,7 @@ Our pipeline consists of **four integrated stages** working in concert:
 
 ---
 
-## 📊 Feature Engineering & Importance
+##  Feature Engineering & Importance
 
 ### Multimodal Feature Space (8 Dimensions)
 
@@ -314,7 +308,7 @@ Our final model leverages both **linguistic** and **acoustic** modalities:
 </tbody>
 </table>
 
-### 🔍 Key Insights
+###  Key Insights
 
 - **Acoustic features contribute 51% of total importance**, validating the multimodal approach
 - **Zero-crossing rate (voice texture)** is the 2nd most important feature after linguistic scores
@@ -323,7 +317,7 @@ Our final model leverages both **linguistic** and **acoustic** modalities:
 
 ---
 
-## 📁 Repository Structure
+##  Repository Structure
 
 ```
 GrammarScoreAI/
@@ -385,7 +379,7 @@ GrammarScoreAI/
 
 ---
 
-## 🚀 Installation
+##  Installation
 
 ### Prerequisites
 
@@ -485,7 +479,7 @@ predictions = lgb_model.predict(test_features)
 
 ---
 
-## 🔬 Technical Deep Dive
+##  Technical Deep Dive
 
 ### 1. Error-Preserving ASR Configuration
 
@@ -503,7 +497,7 @@ segments, info = model.transcribe(
 **Our Solution**: Disable context conditioning and use deterministic decoding.
 
 ```python
-# ✅ CORRECT: Error-preserving configuration
+#  CORRECT: Error-preserving configuration
 segments, info = model.transcribe(
     audio_path,
     beam_size=5,                       # Beam search for quality
@@ -631,7 +625,7 @@ final_preds = apply_silence_override(test_df, final_preds)
 
 ---
 
-## 📈 Results & Analysis
+##  Results & Analysis
 
 ### Actual vs. Predicted Performance
 
@@ -650,13 +644,13 @@ final_preds = apply_silence_override(test_df, final_preds)
 
 ### Error Distribution Analysis
 
-- ✅ **Unbiased**: Mean residual ≈ 0 (no systematic over/under-prediction)
-- ✅ **Tight**: Standard deviation = 0.458 (concentrated around true values)
-- ✅ **Symmetric**: Residuals follow approximately normal distribution
+-  **Unbiased**: Mean residual ≈ 0 (no systematic over/under-prediction)
+-  **Tight**: Standard deviation = 0.458 (concentrated around true values)
+-  **Symmetric**: Residuals follow approximately normal distribution
 
 ---
 
-## 🛠️ Key Design Decisions
+##  Key Design Decisions
 
 | Decision | Rationale | Impact | Alternative Considered |
 |:---------|:----------|:-------|:-----------------------|
@@ -670,7 +664,7 @@ final_preds = apply_silence_override(test_df, final_preds)
 
 ---
 
-## 🧪 Ablation Study & Experiments
+##  Ablation Study & Experiments
 
 ### Multimodal Contribution Analysis
 
@@ -708,7 +702,7 @@ final_preds = apply_silence_override(test_df, final_preds)
 
 ---
 
-## 🔮 Future Work & Improvements
+##  Future Work & Improvements
 
 ### Short-term Enhancements
 
@@ -733,7 +727,7 @@ final_preds = apply_silence_override(test_df, final_preds)
 
 ---
 
-## 📚 References & Citation
+##  References & Citation
 
 ### Core Technologies
 
@@ -778,7 +772,7 @@ If you use this code in your research, please cite:
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
@@ -800,17 +794,17 @@ copies or substantial portions of the Software.
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 We welcome contributions! Here's how you can help:
 
 ### Types of Contributions
 
-- 🐛 **Bug Reports**: File issues with reproducible examples
-- ✨ **Feature Requests**: Propose new capabilities
-- 📝 **Documentation**: Improve README, add tutorials
-- 🔬 **Research**: Experiment with new architectures
-- 💻 **Code**: Submit pull requests with improvements
+-  **Bug Reports**: File issues with reproducible examples
+-  **Feature Requests**: Propose new capabilities
+-  **Documentation**: Improve README, add tutorials
+-  **Research**: Experiment with new architectures
+-  **Code**: Submit pull requests with improvements
 
 ### Development Workflow
 
@@ -830,18 +824,18 @@ We welcome contributions! Here's how you can help:
 
 ---
 
-## 👤 Author
+##  Author
 
 **Ritesh Pandey**
 
-- 🔗 GitHub: [@yourusername](https://github.com/yourusername)
-- 📧 Email: your.email@example.com
-- 💼 LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
-- 🐦 Twitter: [@yourhandle](https://twitter.com/yourhandle)
+-  GitHub: [@yourusername](https://github.com/yourusername)
+-  Email: your.email@example.com
+-  LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
+-  Twitter: [@yourhandle](https://twitter.com/yourhandle)
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 Special thanks to:
 
@@ -853,14 +847,14 @@ Special thanks to:
 
 ---
 
-## 📞 Support & Contact
+##  Support & Contact
 
 ### Get Help
 
-- 🐛 **Bug Reports**: [Open an issue](https://github.com/yourusername/GrammarScoreAI/issues/new?template=bug_report.md)
-- 💡 **Feature Requests**: [Request a feature](https://github.com/yourusername/GrammarScoreAI/issues/new?template=feature_request.md)
-- 💬 **Discussions**: [Join the discussion](https://github.com/yourusername/GrammarScoreAI/discussions)
-- 📧 **Email**: your.email@example.com
+-  **Bug Reports**: [Open an issue](https://github.com/yourusername/GrammarScoreAI/issues/new?template=bug_report.md)
+-  **Feature Requests**: [Request a feature](https://github.com/yourusername/GrammarScoreAI/issues/new?template=feature_request.md)
+-  **Discussions**: [Join the discussion](https://github.com/yourusername/GrammarScoreAI/discussions)
+-  **Email**: your.email@example.com
 
 ### FAQ
 
@@ -896,7 +890,7 @@ Yes, this project is MIT licensed. However, verify that the model licenses (DeBE
 
 ---
 
-## 📊 Project Statistics
+##  Project Statistics
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter&logoColor=white)
@@ -908,7 +902,7 @@ Yes, this project is MIT licensed. However, verify that the model licenses (DeBE
 
 <div align="center">
 
-### ⭐ Star this repository if you find it useful! ⭐
+###  Star this repository if you find it useful! ⭐
 
 <br>
 
