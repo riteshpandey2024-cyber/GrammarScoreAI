@@ -822,10 +822,9 @@ We welcome contributions! Here's how you can help:
 
 **Ritesh Pandey**
 
--  GitHub: [@yourusername](https://github.com/yourusername)
--  Email: your.email@example.com
--  LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
--  Twitter: [@yourhandle](https://twitter.com/yourhandle)
+-  GitHub: [@yourusername](https://github.com/riteshpandey2024-cyber)
+-  Email: pandeyriteshp2003@gmail.com
+-  LinkedIn: [Your LinkedIn](https://www.linkedin.com/in/ritesh-pandey2024/) 
 
 ---
 
@@ -836,19 +835,10 @@ Special thanks to:
 - **SHL Research** for providing the assessment challenge and curated dataset
 - **Hugging Face** for democratizing transformer model access
 - **Microsoft Research** for open-sourcing DeBERTa and LightGBM
-- **Systran** for the optimized Faster-Whisper implementation
+- **Systran** for the optimised Faster-Whisper implementation
 - **Open-source community** for the amazing ML/DL ecosystem
 
 ---
-
-##  Support & Contact
-
-### Get Help
-
--  **Bug Reports**: [Open an issue](https://github.com/yourusername/GrammarScoreAI/issues/new?template=bug_report.md)
--  **Feature Requests**: [Request a feature](https://github.com/yourusername/GrammarScoreAI/issues/new?template=feature_request.md)
--  **Discussions**: [Join the discussion](https://github.com/yourusername/GrammarScoreAI/discussions)
--  **Email**: your.email@example.com
 
 ### FAQ
 
@@ -861,13 +851,13 @@ Yes, but it will be significantly slower (expect 10-12 hours total runtime). The
 <details>
 <summary><strong>Q: What GPU memory is required?</strong></summary>
 <br>
-Minimum 8GB VRAM for DeBERTa-base training with batch_size=8. If you have less, reduce batch_size to 4 (requires ~5GB) or use gradient accumulation.
+DeBERTa-base training requires at least 8 GB VRAM with batch_size=8. If you have less, reduce batch_size to 4 (requires ~5GB) or use gradient accumulation.
 </details>
 
 <details>
 <summary><strong>Q: Can I use this for other languages?</strong></summary>
 <br>
-The current pipeline is English-specific, but it can be adapted. You would need: (1) multilingual ASR model, (2) multilingual DeBERTa (e.g., mDeBERTa), and (3) language-appropriate training data.
+The current pipeline is English-specific, but you can adapt it. You would need: (1) a multilingual ASR model, (2) multilingual DeBERTa (e.g., mDeBERTa), and (3) language-appropriate training data.
 </details>
 
 <details>
