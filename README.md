@@ -156,36 +156,36 @@ Our pipeline consists of **four integrated stages** working in concert:
 │ Model: Faster-Whisper     │               │ Library: Librosa           │
 │        Large-v3           │               │                            │
 │                           │               │ Features Extracted:        │
-│ Configuration:            │               │ ✓ Words Per Minute (WPM)  │
-│ ✓ condition_on_prev=False │               │ ✓ Silence Ratio (%)       │
-│ ✓ temperature=0.0         │               │ ✓ RMS Energy (μ, σ)       │
-│ ✓ no_speech_thresh=0.6    │               │ ✓ Zero-Crossing Rate      │
-│ ✓ beam_size=5             │               │ ✓ Audio Duration (sec)    │
-│                           │               │ ✓ Word Count              │
+│ Configuration:            │               │ ✓ Words Per Minute (WPM)   │
+│ ✓ condition_on_prev=False │               │ ✓ Silence Ratio (%)        │
+│ ✓ temperature=0.0         │               │ ✓ RMS Energy (μ, σ)        │
+│ ✓ no_speech_thresh=0.6    │               │ ✓ Zero-Crossing Rate       │ 
+│ ✓ beam_size=5             │               │ ✓ Audio Duration (sec)     │
+│                           │               │ ✓ Word Count               │
 │ Output: Verbatim Text     │               │                            │
 │         Transcription     │               │ Output: 7D Feature Vector  │
 └──────────┬────────────────┘               └──────────┬─────────────────┘
            │                                           │
            ▼                                           │
-┌───────────────────────────┐                         │
-│ STAGE 3: Text Encoder     │                         │
-│ ──────────────────────────│                         │
-│                           │                         │
-│ Model: DeBERTa-v3-base    │                         │
-│        (microsoft)        │                         │
-│                           │                         │
-│ Training Strategy:        │                         │
-│ ✓ 5-Fold Cross-Validation │                         │
-│ ✓ Differential LR:        │                         │
-│   • Head: 1e-4            │                         │
-│   • Encoder: 1e-5         │                         │
-│ ✓ Full FP32 Precision     │                         │
-│ ✓ Gradient Clipping       │                         │
-│ ✓ Early Stopping          │                         │
-│                           │                         │
-│ Output: OOF Predictions   │                         │
-│         [0.0 - 5.0]       │                         │
-└──────────┬────────────────┘                         │
+┌───────────────────────────┐                          │
+│ STAGE 3: Text Encoder     │                          │
+│ ──────────────────────────│                          │
+│                           │                          │
+│ Model: DeBERTa-v3-base    │                          │
+│        (Microsoft)        │                          │
+│                           │                          │
+│ Training Strategy:        │                          │
+│ ✓ 5-Fold Cross-Validation │                          │
+│ ✓ Differential LR:        │                          │
+│   • Head: 1e-4            │                          │
+│   • Encoder: 1e-5         │                          │
+│ ✓ Full FP32 Precision     │                          │
+│ ✓ Gradient Clipping       │                          │
+│ ✓ Early Stopping          │                          │
+│                           │                          │
+│ Output: OOF Predictions   │                          │
+│         [0.0 - 5.0]       │                          │
+└──────────┬────────────────┘                          │
            │                                           │
            └───────────────┬───────────────────────────┘
                            ▼
@@ -213,7 +213,7 @@ Our pipeline consists of **four integrated stages** working in concert:
            │                                │
            │ Post-processing:               │
            │ ✓ Silence Override Logic       │
-           │ ✓ Score Clipping [0.0, 5.0]   │
+           │ ✓ Score Clipping [0.0, 5.0]    │
            │                                │
            └────────────┬───────────────────┘
                         ▼
