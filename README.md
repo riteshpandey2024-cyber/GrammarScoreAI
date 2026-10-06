@@ -4,12 +4,6 @@
 
 **State-of-the-art Multimodal Machine Learning for Spoken Grammar Assessment**
 
-[Overview](#-overview) •
-[Features](#-key-features) •
-[Performance](#-performance-metrics) •
-[Installation](#-installation) •
-[Documentation](#-technical-deep-dive) •
-[Citation](#-citation)
 
 </div>
 
