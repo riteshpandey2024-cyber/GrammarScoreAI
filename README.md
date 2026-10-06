@@ -40,7 +40,7 @@ We score grammar on a **continuous MOS (Mean Opinion Score) Likert scale from 0.
 <tr>
 <td width="50%">
 
-### 🎙️ Audio Processing
+### Audio Processing
 - **Error-Preserving ASR**: Faster-Whisper Large-v3 with disabled context conditioning
 - **Verbatim Transcription**: Retains grammatical mistakes, false starts, and repetitions
 - **Acoustic Feature Extraction**: 7-dimensional prosody feature space
@@ -58,7 +58,7 @@ We score grammar on a **continuous MOS (Mean Opinion Score) Likert scale from 0.
 <tr>
 <td width="50%">
 
-### 🔬 Multimodal Fusion
+### Multimodal Fusion
 - **Gradient Boosted Stacking**: LightGBM ensemble combining text + audio
 - **Non-linear Feature Interactions**: Captures complex linguistic-acoustic relationships
 - **Silence Override Logic**: Rule-based handling of silent/empty clips
