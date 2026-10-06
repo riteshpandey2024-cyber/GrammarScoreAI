@@ -10,7 +10,7 @@
 
 ##  Overview
 
-**GrammarScoreAI** is an advanced end-to-end machine learning system that automatically evaluates spoken English grammar quality from raw audio recordings. This project implements a novel **multimodal stacking architecture** that combines deep linguistic understanding with acoustic prosody modeling to achieve state-of-the-art performance.
+**GrammarScoreAI** is an advanced end-to-end machine learning system that automatically evaluates spoken English grammar quality from raw audio recordings. This project implements a novel **multimodal stacking architecture** that combines deep linguistic understanding with acoustic prosody modelling to achieve state-of-the-art performance.
 
 ###  The Challenge
 
@@ -30,7 +30,7 @@ We score grammar on a **continuous MOS (Mean Opinion Score) Likert scale from 0.
 - **2.5** → Moderate grammar with noticeable issues
 - **5.0** → Perfect grammar with natural, fluent speech
 
-**Key Innovation**: Combining linguistic analysis (DeBERTa transformer) with acoustic prosody features (librosa) through gradient boosted stacking achieves **61.2% error reduction** over baseline methods.
+**Key Innovation**: Combining linguistic analysis (DeBERTa transformer) with acoustic prosody features (librosa) through gradient-boosted stacking achieves **61.2% error reduction** over baseline methods.
 
 ---
 
@@ -66,7 +66,7 @@ We score grammar on a **continuous MOS (Mean Opinion Score) Likert scale from 0.
 </td>
 <td width="50%">
 
-### 📊 Production Ready
+###  Production Ready
 - **End-to-End Pipeline**: Single Jupyter notebook workflow
 - **Reproducible Results**: Seeded experiments with version-pinned dependencies
 - **Comprehensive Evaluation**: RMSE, Pearson correlation, residual analysis
@@ -97,7 +97,7 @@ We score grammar on a **continuous MOS (Mean Opinion Score) Likert scale from 0.
 <td align="center">1.2390</td>
 <td align="center">0.0000</td>
 <td align="center">—</td>
-<td align="center">📊</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td>DeBERTa-v3 (Uniform LR)</td>
@@ -111,14 +111,14 @@ We score grammar on a **continuous MOS (Mean Opinion Score) Likert scale from 0.
 <td align="center">0.5045</td>
 <td align="center">0.7910</td>
 <td align="center">59.3% ↓</td>
-<td align="center">📊</td>
+<td align="center"></td>
 </tr>
 <tr style="background-color: #f0fff0;">
-<td><strong>🥇 Multimodal Stacking (Ours)</strong></td>
+<td><strong> Multimodal Stacking (Ours)</strong></td>
 <td align="center"><strong>0.4802</strong></td>
 <td align="center"><strong>0.8274</strong></td>
 <td align="center"><strong>61.2% ↓</strong></td>
-<td align="center"><strong>🏆</strong></td>
+<td align="center"><strong></strong></td>
 </tr>
 </tbody>
 </table>
@@ -245,56 +245,56 @@ Our final model leverages both **linguistic** and **acoustic** modalities:
 <tr>
 <td><code>oof_pred</code></td>
 <td align="center"><strong>263</strong></td>
-<td align="center">🔤 Linguistic</td>
+<td align="center">Linguistic</td>
 <td>DeBERTa syntactic grammar score</td>
 <td>Transformer fine-tuning</td>
 </tr>
 <tr>
 <td><code>zcr_mean</code></td>
 <td align="center"><strong>205</strong></td>
-<td align="center">🎵 Acoustic</td>
+<td align="center">Acoustic</td>
 <td>Zero-crossing rate (voice texture)</td>
 <td>librosa.feature.zero_crossing_rate</td>
 </tr>
 <tr>
 <td><code>rms_mean</code></td>
 <td align="center"><strong>173</strong></td>
-<td align="center">🎵 Acoustic</td>
+<td align="center">Acoustic</td>
 <td>Average vocal energy</td>
 <td>librosa.feature.rms</td>
 </tr>
 <tr>
 <td><code>silence_ratio</code></td>
 <td align="center"><strong>118</strong></td>
-<td align="center">🎵 Acoustic</td>
+<td align="center">Acoustic</td>
 <td>Hesitation percentage (30dB threshold)</td>
 <td>librosa.effects.split</td>
 </tr>
 <tr>
 <td><code>word_count</code></td>
 <td align="center"><strong>115</strong></td>
-<td align="center">🔀 Hybrid</td>
+<td align="center">Hybrid</td>
 <td>Total words spoken</td>
 <td>Transcript tokenization</td>
 </tr>
 <tr>
 <td><code>rms_std</code></td>
 <td align="center"><strong>93</strong></td>
-<td align="center">🎵 Acoustic</td>
+<td align="center">Acoustic</td>
 <td>Vocal confidence variation</td>
 <td>Standard deviation of RMS</td>
 </tr>
 <tr>
 <td><code>wpm</code></td>
 <td align="center"><strong>73</strong></td>
-<td align="center">🎵 Acoustic</td>
+<td align="center">Acoustic</td>
 <td>Speaking tempo (fluency indicator)</td>
 <td>word_count / (duration_min)</td>
 </tr>
 <tr>
 <td><code>duration</code></td>
 <td align="center"><strong>57</strong></td>
-<td align="center">🎵 Acoustic</td>
+<td align="center">Acoustic</td>
 <td>Audio clip length</td>
 <td>librosa.get_duration</td>
 </tr>
@@ -315,11 +315,11 @@ Our final model leverages both **linguistic** and **acoustic** modalities:
 ```
 GrammarScoreAI/
 │
-├── 📓 Grammar_Scoring_Engine.ipynb    # 🎯 MAIN: End-to-end pipeline
+├── Grammar_Scoring_Engine.ipynb    #  MAIN: End-to-end pipeline
 │   │
 │   ├── Section 1: Exploratory Data Analysis
 │   │   ├── Data loading and validation
-│   │   ├── Label distribution visualization
+│   │   ├── Label distribution visualisation
 │   │   └── Duration profile analysis
 │   │
 │   ├── Section 2: ASR Transcription
@@ -353,7 +353,7 @@ GrammarScoreAI/
 │   └── Section 7: Submission Generation
 │       └── CSV export with final predictions
 │
-├── 📋 requirements.txt                # Python dependencies (pinned versions)
+├── requirements.txt                # Python dependencies (pinned versions)
 │   ├── torch>=2.0.0
 │   ├── transformers>=4.40.0
 │   ├── faster-whisper>=1.0.0
@@ -361,9 +361,9 @@ GrammarScoreAI/
 │   ├── lightgbm>=4.0.0
 │   └── ... (see file for complete list)
 │
-├── 📖 README.md                       # This comprehensive documentation
+├── README.md                       # This comprehensive documentation
 │
-└── 🔒 .gitignore                      # Excludes:
+└──  .gitignore                      # Excludes:
     ├── Audio files (*.wav, *.mp3)
     ├── Model checkpoints (*.pt, *.pth)
     ├── Generated CSVs (except samples)
@@ -429,7 +429,7 @@ jupyter notebook Grammar_Scoring_Engine.ipynb
 
 ---
 
-## 🎮 Usage
+## Usage
 
 ### Quick Start
 
@@ -495,8 +495,8 @@ segments, info = model.transcribe(
     audio_path,
     beam_size=5,                       # Beam search for quality
     language="en",                     # English constraint
-    condition_on_previous_text=False,  # 🔑 No LM smoothing
-    temperature=0.0,                   # 🔑 Deterministic
+    condition_on_previous_text=False,  #  No LM smoothing
+    temperature=0.0,                   #  Deterministic
     no_speech_threshold=0.6            # Keep low-confidence segments
 )
 ```
@@ -639,7 +639,7 @@ final_preds = apply_silence_override(test_df, final_preds)
 
 -  **Unbiased**: Mean residual ≈ 0 (no systematic over/under-prediction)
 -  **Tight**: Standard deviation = 0.458 (concentrated around true values)
--  **Symmetric**: Residuals follow approximately normal distribution
+-  **Symmetric**: Residuals follow an approximately normal distribution
 
 ---
 
@@ -666,7 +666,7 @@ final_preds = apply_silence_override(test_df, final_preds)
 | **Audio only** | 0.7821 | +62.9% | Acoustic alone insufficient |
 | **Text only (DeBERTa)** | 0.5045 | +5.0% | Strong baseline |
 | **Text + Audio (early fusion)** | 0.4923 | +2.5% | Suboptimal fusion |
-| **Text + Audio (stacking)** 🥇 | **0.4802** | **0.0%** | **Best: non-linear fusion** |
+| **Text + Audio (stacking)**  | **0.4802** | **0.0%** | **Best: non-linear fusion** |
 
 ### Learning Rate Sensitivity
 
@@ -674,7 +674,7 @@ final_preds = apply_silence_override(test_df, final_preds)
 |:-----------------|:--------:|:-------------:|:-----------:|
 | Uniform 1e-5 | 0.5120 | 2.5 hours | Slow |
 | Uniform 1e-4 | 0.5380 | 1.5 hours | Unstable |
-| **Diff (1e-5, 1e-4)** 🥇 | **0.5045** | **2.0 hours** | **Optimal** |
+| **Diff (1e-5, 1e-4)**  | **0.5045** | **2.0 hours** | **Optimal** |
 
 ### Cross-Validation Fold Analysis
 
@@ -690,7 +690,7 @@ final_preds = apply_silence_override(test_df, final_preds)
 
 **Observations**:
 - Low variance across folds indicates **robust generalization**
-- Fold 3 achieves best validation performance (RMSE: 0.4689)
+- Fold 3 achieves the best validation performance (RMSE: 0.4689)
 - Consistent Pearson correlation (r > 0.81) across all folds
 
 ---
@@ -803,7 +803,7 @@ We welcome contributions! Here's how you can help:
 
 1. **Fork** the repository
 2. **Clone** your fork: `git clone https://github.com/yourusername/GrammarScoreAI.git`
-3. **Create branch**: `git checkout -b feature/amazing-feature`
+3. **Create a branch**: `git checkout -b feature/amazing-feature`
 4. **Make changes** and commit: `git commit -m 'Add amazing feature'`
 5. **Push** to branch: `git push origin feature/amazing-feature`
 6. **Open Pull Request** with detailed description
@@ -889,7 +889,7 @@ Yes, this project is MIT licensed. However, verify that the model licenses (DeBE
 
 <br>
 
-**Made with ❤️ and 🤖 by Ritesh Pandey**
+**Made with ❤️ by Ritesh Pandey**
 
 *Empowering automated grammar assessment through multimodal AI*
 
