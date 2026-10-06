@@ -5,7 +5,6 @@
 **State-of-the-art Multimodal Machine Learning for Spoken Grammar Assessment**
 
 
-</div>
 
 ---
 
